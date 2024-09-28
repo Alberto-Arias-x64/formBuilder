@@ -1,0 +1,8 @@
+<div class="float-column gap-tiny input-container">
+  @if(data().label){ <label [for]="id()">{{ data().label }}</label> }
+  <div class="input" [class.disabled]="disabled()" [class.active]="value()">
+    @if(data().icon){ <img class="icon" [src]="data().icon" alt="input icon" /> }
+    <input [type]="data().inputType" [id]="id()" [value]="value()" (keyup)="handleUpdate($event)" (blur)="handleTouch()" [placeholder]="data().placeholder ?? ''" [disabled]="disabled()" />
+  </div>
+  <p class="error" [ngClass]="errorStatus() ? 'show' : 'hide'">{{ errorMessage() }}</p>
+</div>

@@ -1,0 +1,19 @@
+input {
+  height: 50px;
+  width: 40px;
+  border: 1px solid var(--color-gray-dark);
+  border-radius: var(--size-tiny);
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--color-black);
+  transition: border-color 200ms ease;
+  &:focus {
+    border-width: 2px;
+    border-color: var(--color-purple);
+  }
+  &.error {
+    border-width: 2px;
+    border-color: var(--color-red);
+  }
+}

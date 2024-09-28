@@ -1,0 +1,43 @@
+.input-check {
+  width: 46px;
+  height: 24px;
+  background-color: var(--color-purple);
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity ease 100ms;
+  p {
+    user-select: none;
+    position: absolute;
+    top: 5px;
+    font-size: 12px;
+    color: var(--color-white);
+    z-index: 2;
+    &.yes {
+      left: 6px;
+    }
+    &.no {
+      right: 6px;
+    }
+  }
+  .decorator {
+    user-select: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 3;
+    opacity: 1;
+    transition: transform ease 100ms;
+  }
+  &.active {
+    opacity: 1;
+    .decorator {
+      transform: translateX(20px);
+    }
+  }
+}
