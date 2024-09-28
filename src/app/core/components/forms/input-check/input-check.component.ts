@@ -6,7 +6,7 @@ import { Component, forwardRef, signal } from '@angular/core'
   standalone: true,
   imports: [],
   templateUrl: './input-check.component.html',
-  styleUrl: './input-check.component.scss',
+  styleUrl: './input-check.component.css',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

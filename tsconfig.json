@@ -4,7 +4,14 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "src/*": ["src/*"]
+      "src/*": ["./src/*"],
+      "@components/*": ["./src/app/core/components/*"],
+      "@interfaces/*": ["./src/app/core/interfaces/*"],
+      "@directives/*": ["./src/app/core/directives/*"],
+      "@services/*": ["./src/app/core/services/*"],
+      "@enums/*": ["./src/app/core/types/enums/*"],
+      "@mocks/*": ["./src/app/core/mocks/*"],
+      "@util/*": ["./src/app/core/util/*"],
     },
     "outDir": "./dist/out-tsc",
     "strict": true,

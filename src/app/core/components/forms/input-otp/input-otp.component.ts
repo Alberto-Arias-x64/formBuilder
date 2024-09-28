@@ -1,5 +1,5 @@
-import { NumberOnlyDirective } from 'src/app/util/directives/number-only.directive'
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
+import { NumberOnlyDirective } from '@directives/number-only.directive'
 import { Component, forwardRef, signal } from '@angular/core'
 
 @Component({

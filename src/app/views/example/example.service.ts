@@ -1,9 +1,12 @@
-import { Injectable } from '@angular/core'
+import { Injectable, signal } from '@angular/core'
+import { ESteps } from './example.enum'
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ExampleService {
+  currentStep$ = signal<ESteps>(ESteps.FIRST_FORM)
+
   firstForm = new FormData()
   secondForm = new FormData()
+
+
 }

@@ -1,6 +1,6 @@
 import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator, Validators } from '@angular/forms'
 import { Component, ElementRef, forwardRef, HostListener, inject, input, signal } from '@angular/core'
-import type { IInputList, ITypedParam } from 'src/app/types/interfaces/input.interface'
+import type { IInputList, ITypedParam } from '../forms.interface'
 import { NgClass } from '@angular/common'
 
 @Component({
@@ -8,7 +8,7 @@ import { NgClass } from '@angular/common'
   standalone: true,
   imports: [NgClass],
   templateUrl: './input-list.component.html',
-  styleUrl: './input-list.component.scss',
+  styleUrl: './input-list.component.css',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

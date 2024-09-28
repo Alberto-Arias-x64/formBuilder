@@ -1,4 +1,4 @@
-<section class="float-row gap-small" [id]="id()">
+<section class="flex-row gap-small" [id]="id()">
   <input type="text" maxlength="1" [id]="'otp1-' + id()" [class.error]="errorStatus()" [value]="otp1()" (keyup)="autoTab($event)" (blur)="checkFocus()" appNumberOnly isAllowFirstZero="true" />
   <input type="text" maxlength="1" [id]="'otp2-' + id()" [class.error]="errorStatus()" [value]="otp2()" (keyup)="autoTab($event)" (blur)="checkFocus()" appNumberOnly isAllowFirstZero="true" />
   <input type="text" maxlength="1" [id]="'otp3-' + id()" [class.error]="errorStatus()" [value]="otp3()" (keyup)="autoTab($event)" (blur)="checkFocus()" appNumberOnly isAllowFirstZero="true" />

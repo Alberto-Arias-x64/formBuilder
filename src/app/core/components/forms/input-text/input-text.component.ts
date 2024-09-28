@@ -1,6 +1,6 @@
-import type { IInputText } from 'src/app/types/interfaces/input.interface'
-import { Component, forwardRef, input, signal } from '@angular/core'
 import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator } from '@angular/forms'
+import { Component, forwardRef, input, signal } from '@angular/core'
+import type { IInputText } from '../forms.interface'
 import { NgClass } from '@angular/common'
 
 @Component({

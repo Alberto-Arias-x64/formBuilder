@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, forwardRef, input, signal } from '@angular/core'
-import type { IInputDate } from 'src/app/types/interfaces/input.interface'
+import type { IInputDate } from '../forms.interface'
 import { NG_VALUE_ACCESSOR } from '@angular/forms'
 import { Datepicker } from 'vanillajs-datepicker'
 
@@ -10,7 +10,7 @@ import es from './locales'
   standalone: true,
   imports: [],
   templateUrl: './input-date.component.html',
-  styleUrl: './input-date.component.scss',
+  styleUrl: './input-date.component.css',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

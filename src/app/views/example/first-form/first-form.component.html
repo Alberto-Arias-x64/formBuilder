@@ -1,3 +1,10 @@
-<app-form-layout>
-
-</app-form-layout>
+<section class="padding-standard flex-column gap-standard">
+  <h1>First Form</h1>
+  <form (ngSubmit)="handleSubmit()" [formGroup]="form">
+    <app-form-layout>
+      <p>one</p>
+      <p>2</p>
+    </app-form-layout>
+    <button>Submit</button>
+  </form>
+</section>
