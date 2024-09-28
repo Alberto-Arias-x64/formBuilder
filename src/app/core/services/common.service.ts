@@ -1,7 +1,8 @@
+import { IForm } from '../types/interfaces/mocks.interface'
 import { environment } from 'src/environments/environment'
-import { delay, firstValueFrom, of } from 'rxjs'
 import { inject, Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
+import { delay, firstValueFrom, of } from 'rxjs'
 import { LoaderService } from './loader.service'
 import { formMock } from '@mocks/api.mock'
 
@@ -18,8 +19,8 @@ export class CommonService {
     return firstValueFrom(this._http.get<T>(this.API_URL + url))
   }
 
-  public async requestForm() {
-    // const form = await this.apiRequest<any>("/form")
+  public async requestForm(): Promise<IForm> {
+    // const form = await this.apiRequest<IForm>("/form")
     this._loaderService.show()
     const form = await firstValueFrom(of(formMock).pipe(delay(1000))) // DUMMY
     if (form) this._loaderService.hide()

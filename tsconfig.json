@@ -5,8 +5,8 @@
   "compilerOptions": {
     "paths": {
       "src/*": ["./src/*"],
+      "@interfaces/*": ["./src/app/core/types/interfaces/*"],
       "@components/*": ["./src/app/core/components/*"],
-      "@interfaces/*": ["./src/app/core/interfaces/*"],
       "@directives/*": ["./src/app/core/directives/*"],
       "@services/*": ["./src/app/core/services/*"],
       "@enums/*": ["./src/app/core/types/enums/*"],

@@ -18,9 +18,16 @@ export class ExampleComponent implements OnInit {
 
   stepsEnum = ESteps
   step$ = signal<ESteps>(ESteps.FIRST_FORM)
+  ready$ = signal(false)
 
   ngOnInit() {
-    this._commonService.requestForm()
     this._exampleService.currentStep$.set(ESteps.FIRST_FORM)
+    this.loadData()
+  }
+
+  async loadData() {
+    const firstFormData = await this._commonService.requestForm()
+    this._exampleService.firstFormData$.set(firstFormData)
+    if (await Promise.all([firstFormData])) this.ready$.set(true)
   }
 }

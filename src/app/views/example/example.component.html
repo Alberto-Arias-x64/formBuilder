@@ -1,13 +1,11 @@
+@if(ready$()){
 <section>
-  @switch (step$()) {
-    @case(stepsEnum.FIRST_FORM){
-      <app-first-form></app-first-form>
-    }
-    @case(stepsEnum.SECOND_FORM){
-      <app-second-form></app-second-form>
-    }
-    @default(){
-      <p>No example selected</p>
-    }
-  }
+  @switch (step$()) { @case(stepsEnum.FIRST_FORM){
+  <app-first-form></app-first-form>
+  } @case(stepsEnum.SECOND_FORM){
+  <app-second-form></app-second-form>
+  } @default(){
+  <p>No example selected</p>
+  } }
 </section>
+}
