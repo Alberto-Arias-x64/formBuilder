@@ -3,6 +3,7 @@ import { FirstFormComponent } from './first-form/first-form.component'
 import { SecondFormComponent } from './second-form/second-form.component'
 import { ESteps } from './example.enum'
 import { ExampleService } from './example.service'
+import { CommonService } from 'src/app/core/services/common.service'
 
 @Component({
   selector: 'app-example',
@@ -13,11 +14,13 @@ import { ExampleService } from './example.service'
 })
 export class ExampleComponent implements OnInit {
   private readonly _exampleService = inject(ExampleService)
+  private readonly _commonService = inject(CommonService)
 
   stepsEnum = ESteps
   step$ = signal<ESteps>(ESteps.FIRST_FORM)
 
   ngOnInit() {
-      this._exampleService.currentStep$.set(ESteps.FIRST_FORM)
+    this._commonService.requestForm()
+    this._exampleService.currentStep$.set(ESteps.FIRST_FORM)
   }
 }

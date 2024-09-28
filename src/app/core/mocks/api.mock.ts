@@ -1,4 +1,4 @@
-const formMock = [
+export const formMock = [
   {
     id: 1,
     nombre: 'TipoIdentificacion',
