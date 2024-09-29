@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export type IForm = IInputForm[]
 
-export interface IInputForm{
+export interface IInputForm {
   id: number
   nombre: string
   descripcion: string
   tipo: string
   valor: any
   campo: string
-  tipoCampo: any
+  tipoCampo: 'text' | 'number' | 'password' | 'list' | 'date' | 'checkbox'
   obligatorio: boolean
   visible: boolean
   requerido: boolean
@@ -17,4 +17,6 @@ export interface IInputForm{
   creadoPor: string
   modificadoPor: any
   fechaModificacion: any
+  columns?: number
+  icon?: string
 }

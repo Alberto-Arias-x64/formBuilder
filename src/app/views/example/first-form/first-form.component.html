@@ -1,9 +1,33 @@
 <section class="padding-standard flex-column gap-standard">
   <h1>First Form</h1>
-  <!-- <form (ngSubmit)="handleSubmit()" [formGroup]="form" class="card">
+  <form (ngSubmit)="handleSubmit()" [formGroup]="form" class="card">
     <app-form-layout>
-      <app-input-text [data]="data.firstName" formControlName="firstName"></app-input-text>
+      @for(item of data; track item.id){ @if(item.tipoCampo === 'list'){
+      <app-input-list
+        [data]="{
+          label: item.descripcion,
+          list: [
+            {
+              key: '1',
+              value: 'Option 1'
+            }
+          ]
+        }"
+        [formControlName]="item.nombre"
+        [ngStyle]="{ 'grid-column': 'span ' + item.columns || 1 }"
+      />
+      } @else if (item.tipoCampo === 'text' || item.tipoCampo === 'number') {
+      <app-input-text
+        [data]="{
+              inputType: item.tipoCampo,
+              label: item.descripcion,
+              icon: item.icon,
+            }"
+        [formControlName]="item.nombre"
+        [ngStyle]="{ 'grid-column': 'span ' + item.columns || 1 }"
+      />
+      } }
     </app-form-layout>
     <button>Submit</button>
-  </form> -->
+  </form>
 </section>

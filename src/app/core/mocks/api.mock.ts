@@ -1,4 +1,6 @@
-export const formMock = [
+import type { IForm } from "../types/interfaces/mocks.interface";
+
+export const formMock: IForm = [
   {
     id: 1,
     nombre: 'TipoIdentificacion',
@@ -6,7 +8,7 @@ export const formMock = [
     tipo: 'Tipo de identificación',
     valor: null,
     campo: 'TipoIdentificacion',
-    tipoCampo: null,
+    tipoCampo: 'list',
     obligatorio: true,
     visible: true,
     requerido: true,
@@ -14,7 +16,8 @@ export const formMock = [
     fechaCreacion: '2024-09-18T00:00:00.000',
     creadoPor: 'Celerys',
     modificadoPor: null,
-    fechaModificacion: null
+    fechaModificacion: null,
+    columns: 2
   },
   {
     id: 2,
@@ -23,7 +26,7 @@ export const formMock = [
     tipo: 'Número de identificación',
     valor: null,
     campo: 'NumeroIdentificacion',
-    tipoCampo: null,
+    tipoCampo: 'number',
     obligatorio: true,
     visible: true,
     requerido: true,
@@ -31,7 +34,8 @@ export const formMock = [
     fechaCreacion: '2024-09-18T00:00:00.000',
     creadoPor: 'Celerys',
     modificadoPor: null,
-    fechaModificacion: null
+    fechaModificacion: null,
+    icon: '/icons/input_number.svg'
   },
   {
     id: 3,
@@ -40,7 +44,7 @@ export const formMock = [
     tipo: 'Nombres',
     valor: null,
     campo: 'Nombres',
-    tipoCampo: null,
+    tipoCampo: 'text',
     obligatorio: true,
     visible: true,
     requerido: true,
@@ -57,7 +61,7 @@ export const formMock = [
     tipo: 'Primer apellido',
     valor: null,
     campo: 'PrimerApellido',
-    tipoCampo: null,
+    tipoCampo: 'text',
     obligatorio: true,
     visible: true,
     requerido: true,
@@ -65,6 +69,6 @@ export const formMock = [
     fechaCreacion: '2024-09-18T00:00:00.000',
     creadoPor: 'Celerys',
     modificadoPor: null,
-    fechaModificacion: null
+    fechaModificacion: null,
   }
 ]

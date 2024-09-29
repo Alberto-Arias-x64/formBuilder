@@ -35,6 +35,7 @@
             ],
             "styles": [
               "src/normalize.css",
+              "public/fonts/fonts.css",
               "src/styles.css"
             ],
             "scripts": []

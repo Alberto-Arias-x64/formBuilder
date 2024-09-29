@@ -54,7 +54,7 @@ export class InputListComponent implements ControlValueAccessor, Validator {
       this.activeStatus.set(false)
       const element = document.getElementById(this.id()) as HTMLInputElement
       if (element) element.value = this.value()?.value.toString() || ''
-    }, 100)
+    }, 200)
   }
 
   handleUpdate(value: ITypedParam) {

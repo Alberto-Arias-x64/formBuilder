@@ -4,7 +4,7 @@
     @if(data().icon){ <img class="icon" [src]="data().icon" alt="input icon" /> }
     <input type="text" [id]="id()" [value]="value()?.value || ''" (focus)="handleActive()" (blur)="handleBlur()" [placeholder]="data().placeholder ?? ''" [disabled]="disabled()" />
   </div>
-  <img class="arrow" [class.active]="activeStatus()" (click)="handleActive()" src="/assets/icons/arrow.svg" alt="arrow" />
+  <img class="arrow" [class.active]="activeStatus()" (click)="handleActive()" src="/icons/arrow.svg" alt="arrow" />
   @if(activeStatus()){
   <div class="list router">
     @for (item of data().list; track $index) {

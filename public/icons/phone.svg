@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24.193" height="41.416" viewBox="0 0 24.193 41.416">
+  <g id="Grupo_36116" data-name="Grupo 36116" transform="translate(-301.96 -386.232)">
+    <g id="smartphone" transform="translate(301.96 386.232)">
+      <g id="Grupo_6749" data-name="Grupo 6749" transform="translate(10.815 35.642)">
+        <g id="Grupo_6748" data-name="Grupo 6748" transform="translate(0)">
+          <path id="Trazado_8190" data-name="Trazado 8190" d="M223.547,435.2h-.795a.887.887,0,0,0-.884.884v.156a.887.887,0,0,0,.884.884h.795a.887.887,0,0,0,.884-.884v-.155a.887.887,0,0,0-.884-.884Z" transform="translate(-221.868 -435.2)" fill="#343434"/>
+        </g>
+      </g>
+      <g id="Grupo_6751" data-name="Grupo 6751" transform="translate(0 0)">
+        <g id="Grupo_6750" data-name="Grupo 6750" transform="translate(0)">
+          <path id="Trazado_8191" data-name="Trazado 8191" d="M131.063,0H113.329a2.4,2.4,0,0,0-2.4,2.4V37.352a2.4,2.4,0,0,0,2.4,2.4h17.734a2.4,2.4,0,0,0,2.4-2.393V2.4a2.4,2.4,0,0,0-2.4-2.4Zm1.07,37.352a1.07,1.07,0,0,1-1.07,1.07H113.329a1.07,1.07,0,0,1-1.07-1.07V2.4a1.07,1.07,0,0,1,1.07-1.07h17.734a1.07,1.07,0,0,1,1.07,1.07Z" transform="translate(-110.099 0.834)" fill="#343434"/>
+          <path id="Trazado_8191_-_Contorno" data-name="Trazado 8191 - Contorno" d="M113.862-.3H131.6a3.238,3.238,0,0,1,3.23,3.229v34.96a3.239,3.239,0,0,1-3.229,3.227H113.863a3.238,3.238,0,0,1-3.23-3.229V2.93A3.238,3.238,0,0,1,113.862-.3ZM131.6,38.122a.237.237,0,0,0,.236-.236V2.93a.237.237,0,0,0-.236-.236H113.863a.237.237,0,0,0-.236.236V37.886a.237.237,0,0,0,.236.236Z" transform="translate(-110.633 0.3)" fill="#343434"/>
+        </g>
+      </g>
+      <g id="Grupo_6753" data-name="Grupo 6753" transform="translate(0.006 5.55)">
+        <g id="Grupo_6752" data-name="Grupo 6752" transform="translate(0 0)">
+          <path id="Trazado_8192" data-name="Trazado 8192" d="M132.794,51.2H111.6a.634.634,0,0,0-.662.6V77.073a.634.634,0,0,0,.662.6h21.2a.634.634,0,0,0,.662-.6V51.8a.634.634,0,0,0-.662-.6Zm-.662,25.272H112.259V52.4h19.874Z" transform="translate(-110.102 -50.366)" fill="#343434"/>
+          <path id="Trazado_8192_-_Contorno" data-name="Trazado 8192 - Contorno" d="M133.357,50.9a1.467,1.467,0,0,1,1.465,1.392V77.65a1.465,1.465,0,0,1-1.509,1.391H112.146a1.466,1.466,0,0,1-1.509-1.391V52.292a1.466,1.466,0,0,1,1.509-1.391h21.211Zm-1.525,2.872H113.627v22.4h18.206Z" transform="translate(-110.636 -50.9)" fill="#343434"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
