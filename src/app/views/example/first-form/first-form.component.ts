@@ -5,6 +5,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms'
 import { Component, inject, OnInit } from '@angular/core'
 import { ExampleService } from '../example.service'
 import { NgStyle } from '@angular/common'
+import { ESteps } from '../example.enum'
 
 @Component({
   selector: 'app-first-form',
@@ -26,5 +27,6 @@ export class FirstFormComponent implements OnInit {
     if (this.form.invalid) return this._exampleService.validateForm(this.form)
     this._exampleService.firstForm = this.form.value
     console.log(this._exampleService.firstForm)
+    this._exampleService.currentStep$.set(ESteps.SECOND_FORM)
   }
 }

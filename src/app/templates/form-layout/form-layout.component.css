@@ -2,3 +2,21 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+@media screen and (width < 900px) {
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (width < 650px) {
+  section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (width < 450px) {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+

@@ -1,9 +1,9 @@
-import { Component, inject, OnInit, signal } from '@angular/core'
-import { FirstFormComponent } from './first-form/first-form.component'
+import { Component, computed, inject, OnInit, signal } from '@angular/core'
 import { SecondFormComponent } from './second-form/second-form.component'
-import { ESteps } from './example.enum'
-import { ExampleService } from './example.service'
+import { FirstFormComponent } from './first-form/first-form.component'
 import { CommonService } from 'src/app/core/services/common.service'
+import { ExampleService } from './example.service'
+import { ESteps } from './example.enum'
 
 @Component({
   selector: 'app-example',
@@ -17,7 +17,7 @@ export class ExampleComponent implements OnInit {
   private readonly _commonService = inject(CommonService)
 
   stepsEnum = ESteps
-  step$ = signal<ESteps>(ESteps.FIRST_FORM)
+  step$ = computed<ESteps>(() => this._exampleService.currentStep$())
   ready$ = signal(false)
 
   ngOnInit() {

@@ -45,7 +45,7 @@
     color: var(--color-red);
     font-size: 12px;
     font-weight: 700;
-    z-index: -1;
+    z-index: 1;
     &.show {
       animation: 100ms ease-in-out 0s 1 normal both running show;
     }

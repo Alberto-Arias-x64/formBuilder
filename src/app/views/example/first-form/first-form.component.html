@@ -1,6 +1,6 @@
 <section class="padding-standard flex-column gap-standard">
   <h1>First Form</h1>
-  <form (ngSubmit)="handleSubmit()" [formGroup]="form" class="card">
+  <form (ngSubmit)="handleSubmit()" [formGroup]="form" class="card flex-column gap-standard">
     <app-form-layout>
       @for(item of data; track item.id){ @if(item.tipoCampo === 'list'){
       <app-input-list
@@ -28,6 +28,6 @@
       />
       } }
     </app-form-layout>
-    <button>Submit</button>
+    <button class="size-huge">Submit</button>
   </form>
 </section>
