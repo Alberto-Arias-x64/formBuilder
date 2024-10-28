@@ -1,6 +1,6 @@
-import { JsonPipe } from '@angular/common'
 import { Component, inject, OnInit, signal } from '@angular/core'
 import { FormService } from '../form.service'
+import { JsonPipe } from '@angular/common'
 
 @Component({
   selector: 'app-success',
@@ -15,7 +15,6 @@ export class SuccessComponent implements OnInit {
   data$ = signal<any>([])
 
   ngOnInit() {
-    console.log(this._formService.formData$())
     this.data$.set(this._formService.formData$())
   }
 }
