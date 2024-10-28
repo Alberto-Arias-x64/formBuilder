@@ -2,6 +2,7 @@ import { FormBuilderComponent } from '@components/form-builder/form-builder.comp
 import { Component, computed, inject, OnInit, signal } from '@angular/core'
 import { CommonService } from '@services/common.service'
 import { FormService } from './form.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-form',
@@ -13,6 +14,7 @@ import { FormService } from './form.service'
 export class FormComponent implements OnInit {
   private readonly _commonService = inject(CommonService)
   private readonly _formService = inject(FormService)
+  private readonly _router = inject(Router)
 
   step$ = computed(() => this._formService.currentStep$())
   formMap$ = computed(() => this._formService.formMap$())
@@ -25,7 +27,13 @@ export class FormComponent implements OnInit {
 
   async loadData() {
     const formMap = await this._commonService.requestForm()
-    this._formService.formMap$.set(formMap)
+    this._formService.formMap$.set(formMap.sort((a, b) => a.order - b.order))
     if (await Promise.all([formMap])) this.ready$.set(true)
+  }
+
+  handleSubmit(data: Record<string, string>) {
+    this._formService.addData(data)
+    this._formService.nextStep()
+    if (this.step$() > this.formMap$().length - 1) this._router.navigate(['/success'])
   }
 }

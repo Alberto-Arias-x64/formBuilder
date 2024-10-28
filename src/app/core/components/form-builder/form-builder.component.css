@@ -1,0 +1,26 @@
+.span-4 {
+  grid-column: span 4;
+}
+
+.span-3 {
+  grid-column: span 3;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+@media screen and (width < 900px) {
+  .span-4 {
+    grid-column: span 3;
+  }
+}
+@media screen and (width < 650px) {
+  .span-4 {
+    grid-column: span 2;
+  }
+
+  .span-3 {
+    grid-column: span 2;
+  }
+}

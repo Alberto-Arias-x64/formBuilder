@@ -1,3 +1,4 @@
+import { SuccessComponent } from './success/success.component'
 import { FormComponent } from './form.component'
 import { FormService } from './form.service'
 import { Routes } from '@angular/router'
@@ -5,8 +6,17 @@ import { Routes } from '@angular/router'
 export const formRoutes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
     providers: [FormService],
-    component: FormComponent
+    children: [
+      {
+        path: 'success',
+        component: SuccessComponent
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        component: FormComponent
+      }
+    ]
   }
 ]

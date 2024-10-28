@@ -1,6 +1,6 @@
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
-import { ITypedParam } from '../forms/forms.interface'
-import { IInputForm } from './form-builder.interface'
+import type { ITypedParam } from '../forms/forms.interface'
+import type { IInputForm } from './form-builder.interface'
 import { inject, Injectable } from '@angular/core'
 
 @Injectable()
@@ -11,6 +11,7 @@ export class FormBuilderService {
     const formGroupList = data.map((data) => {
       const validations = []
       if (data.validations?.required) validations.push(Validators.required)
+      if (data.validations?.requiredTrue) validations.push(Validators.requiredTrue)
       if (data.validations?.email) validations.push(Validators.email)
       if (data.validations?.minLength) validations.push(Validators.minLength(data.validations.minLength))
       if (data.validations?.maxLength) validations.push(Validators.maxLength(data.validations.maxLength))

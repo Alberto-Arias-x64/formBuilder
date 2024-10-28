@@ -1,9 +1,7 @@
 @if(ready$()){
 <section>
-  @for (item of formMap$(); track $index) {
-    @if ($index === step$()) {
-      <app-form-builder [formMap]="item" />
-    }
-  }
+  @for (item of formMap$(); track $index) { @if ($index === step$()) {
+  <app-form-builder [formMap]="item" (formData)="handleSubmit($event)" />
+  } }
 </section>
 }

@@ -6,7 +6,8 @@ const since18YearsAgo = new Date(today.getFullYear() - 18, today.getMonth(), tod
 
 export const formMock: IFormMap[] = [
   {
-    title: 'First form',
+    title: 'Datos personales',
+    order: 1,
     formData: [
       {
         id: 1,
@@ -16,7 +17,7 @@ export const formMock: IFormMap[] = [
         type: EFormType.LIST,
         icon: EFormIcon.NUMBER,
         orden: 1,
-        columns: 2,
+        columns: 3,
         list: [
           { key: 1, value: 'CC' },
           { key: 2, value: 'NIT' }
@@ -57,6 +58,7 @@ export const formMock: IFormMap[] = [
         label: 'Crea una contraseña',
         placeholder: '******',
         orden: 4,
+        columns: 2,
         type: EFormType.PASSWORD,
         validations: {
           required: true,
@@ -79,15 +81,20 @@ export const formMock: IFormMap[] = [
     ]
   },
   {
-    title: 'Second form',
+    title: 'Terminos de uso',
+    order: 2,
     formData: [
       {
         id: 1,
-        name: 'accord',
+        name: 't&c',
         label: 'Esta de acuerdo en los terminos de uso',
         orden: 1,
-        type: EFormType.CHECKBOX
+        columns: 4,
+        type: EFormType.CHECKBOX,
+        validations: {
+          requiredTrue: true
+        }
       }
     ]
-  }
+  },
 ]

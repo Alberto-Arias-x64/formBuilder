@@ -1,4 +1,4 @@
-<section class="padding-standard flex-column gap-standard">
+<section class="padding-standard flex-column gap-standard router">
   <h1>{{ formMap().title }}</h1>
   <form (ngSubmit)="handleSubmit()" [formGroup]="form" class="card flex-column gap-standard">
     <app-form-layout>
@@ -11,6 +11,7 @@
         }"
         [dataType]="item.type"
         [formControlName]="item.name"
+        [ngClass]="{ 'span-4': item.columns && item.columns === 4, 'span-3': item.columns && item.columns === 3, 'span-2': item.columns && item.columns === 2 }"
       />
       } @else if (item.type === LIST_TYPES.TEXT || item.type === LIST_TYPES.NUMBER || item.type === LIST_TYPES.PASSWORD || item.type === LIST_TYPES.MONEY) {
       <app-input-text
@@ -21,6 +22,7 @@
         }"
         [dataType]="item.type"
         [formControlName]="item.name"
+        [ngClass]="{ 'span-4': item.columns && item.columns === 4, 'span-3': item.columns && item.columns === 3, 'span-2': item.columns && item.columns === 2 }"
       />
       } @else if (item.type === LIST_TYPES.DATE) {
       <app-input-date
@@ -31,9 +33,10 @@
           dateTo: item.dateTo
         }"
         [formControlName]="item.name"
+        [ngClass]="{ 'span-4': item.columns && item.columns === 4, 'span-3': item.columns && item.columns === 3, 'span-2': item.columns && item.columns === 2 }"
       />
       } @else if (item.type === LIST_TYPES.CHECKBOX) {
-      <app-input-check [data]="item.label" [formControlName]="item.name" />
+      <app-input-check [data]="item.label" [formControlName]="item.name" [ngClass]="{ 'span-4': item.columns && item.columns === 4, 'span-3': item.columns && item.columns === 3, 'span-2': item.columns && item.columns === 2 }" />
       } }
     </app-form-layout>
     <button class="size-huge">Submit</button>

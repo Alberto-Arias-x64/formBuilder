@@ -3,6 +3,7 @@ import type { ITypedParam } from '@components/forms/forms.interface'
 
 export interface IFormMap {
   title: string
+  order: number
   formData: IInputForm[]
 }
 export interface IInputForm {
@@ -22,6 +23,7 @@ export interface IInputForm {
 
 export interface IFormValidations {
   required?: boolean
+  requiredTrue?: boolean
   minLength?: number
   maxLength?: number
   min?: number
