@@ -1,15 +1,14 @@
+import { EFormIcon } from "./forms.enum"
+
 export interface IInputText {
   label?: string
   placeholder?: string
-  icon?: string
-  inputType: 'text' | 'number' | 'password'
+  icon?: EFormIcon
 }
 
-export interface IInputList {
-  label?: string
-  placeholder?: string
-  icon?: string
+export interface IInputList extends IInputText {
   list: ITypedParam[]
+  search?: boolean
 }
 
 export interface IInputDate {

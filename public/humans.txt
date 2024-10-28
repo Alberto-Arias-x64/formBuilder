@@ -1,1 +1,2 @@
 Principal Developer: Alberto Arias (https://github.com/Alberto-Arias-x64)
+Backend Developer: Rafael Ortega (rafael.ortega@bancofinandina.com)

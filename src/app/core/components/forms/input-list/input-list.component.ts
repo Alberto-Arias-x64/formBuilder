@@ -1,7 +1,8 @@
 import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator, Validators } from '@angular/forms'
-import { Component, ElementRef, forwardRef, HostListener, inject, input, signal } from '@angular/core'
+import { AfterViewInit, Component, ElementRef, forwardRef, HostListener, inject, input, signal } from '@angular/core'
 import type { IInputList, ITypedParam } from '../forms.interface'
 import { NgClass } from '@angular/common'
+import { EFormType } from '../forms.enum'
 
 @Component({
   selector: 'app-input-list',
@@ -22,10 +23,11 @@ import { NgClass } from '@angular/common'
     }
   ]
 })
-export class InputListComponent implements ControlValueAccessor, Validator {
+export class InputListComponent implements ControlValueAccessor, Validator, AfterViewInit {
   private readonly elementRef = inject(ElementRef).nativeElement
 
   data = input.required<IInputList>()
+  dataType = input.required<EFormType>()
   id = signal(crypto.randomUUID())
   disabled = signal(true)
   errorMessage = signal('')
@@ -45,6 +47,11 @@ export class InputListComponent implements ControlValueAccessor, Validator {
       const element = document.getElementById(this.id()) as HTMLInputElement
       if (element) element.value = this.value()?.value.toString() || ''
     }
+  }
+
+  ngAfterViewInit() {
+      const element = document.getElementById(this.id()) as HTMLInputElement
+      if (this.dataType() === EFormType.LIST) element.readOnly = true
   }
 
   handleBlur() {

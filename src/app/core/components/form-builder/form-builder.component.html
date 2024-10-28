@@ -1,0 +1,41 @@
+<section class="padding-standard flex-column gap-standard">
+  <h1>{{ formMap().title }}</h1>
+  <form (ngSubmit)="handleSubmit()" [formGroup]="form" class="card flex-column gap-standard">
+    <app-form-layout>
+      @for(item of formMap().formData; track item.id){ @if(item.list && (item.type === LIST_TYPES.LIST || item.type === LIST_TYPES.SEARCH)){
+      <app-input-list
+        [data]="{
+          label: item.label,
+          list: item.list,
+          placeholder: item.placeholder
+        }"
+        [dataType]="item.type"
+        [formControlName]="item.name"
+      />
+      } @else if (item.type === LIST_TYPES.TEXT || item.type === LIST_TYPES.NUMBER || item.type === LIST_TYPES.PASSWORD || item.type === LIST_TYPES.MONEY) {
+      <app-input-text
+        [data]="{
+          label: item.label,
+          icon: item.icon,
+          placeholder: item.placeholder
+        }"
+        [dataType]="item.type"
+        [formControlName]="item.name"
+      />
+      } @else if (item.type === LIST_TYPES.DATE) {
+      <app-input-date
+        [data]="{
+          label: item.label,
+          placeholder: item.placeholder,
+          dateFrom: item.dateFrom,
+          dateTo: item.dateTo
+        }"
+        [formControlName]="item.name"
+      />
+      } @else if (item.type === LIST_TYPES.CHECKBOX) {
+      <app-input-check [data]="item.label" [formControlName]="item.name" />
+      } }
+    </app-form-layout>
+    <button class="size-huge">Submit</button>
+  </form>
+</section>

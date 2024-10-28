@@ -28,7 +28,7 @@
   }
   .error {
     position: absolute;
-    bottom: -15px;
+    top: calc(100% + 2px);
     color: var(--color-red);
     font-size: 12px;
     font-weight: 700;

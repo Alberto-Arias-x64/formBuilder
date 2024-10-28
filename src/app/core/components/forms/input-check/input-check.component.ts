@@ -1,5 +1,5 @@
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
-import { Component, forwardRef, signal } from '@angular/core'
+import { Component, forwardRef, input, signal } from '@angular/core'
 
 @Component({
   selector: 'app-input-check',
@@ -16,6 +16,7 @@ import { Component, forwardRef, signal } from '@angular/core'
   ]
 })
 export class InputCheckComponent implements ControlValueAccessor {
+  data = input<string>()
   id = signal(crypto.randomUUID())
   value = signal(false)
   touched!: () => void

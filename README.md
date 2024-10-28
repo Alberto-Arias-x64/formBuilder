@@ -1,3 +1,5 @@
-# Angular Form Builder boilerplate
+# Celerys Web
 
-This is a boilerplate for Angular projects using the new [FormBuilder](https://angular.io/api/forms/FormBuilder) API.
+This is a boilerplate for Angular projects using the new signals and forms API.
+
+authors: [Alberto Arias](https://github.com/Alberto-Arias-x64), [Rafael Ortega](rafael.ortega@bancofinandina.com)

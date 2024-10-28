@@ -1,7 +1,8 @@
 <div class="flex-column gap-tiny input-container">
   @if(data()?.label){ <label [for]="id()">{{ data()?.label }}</label> }
   <div class="input" [class.disabled]="disabled()" [class.active]="value()">
-    <input type="text" [id]="id()" [value]="value()" (changeDate)="handleUpdate($event)" (show)="checkLimits()" (blur)="handleTouch()" [placeholder]="data()?.placeholder ?? ''" [disabled]="disabled()" />
+    <input type="text" [id]="id()" [value]="value()" (changeDate)="handleUpdate($event)" (show)="checkLimits()" (blur)="handleTouch(); handleBlur($event)" [placeholder]="data()?.placeholder ?? ''" [disabled]="disabled()" />
     <img class="icon" src="/icons/input_calendar.svg" alt="input icon" />
   </div>
+  <p class="error" [ngClass]="errorStatus() ? 'show' : 'hide'">{{ errorMessage() }}</p>
 </div>

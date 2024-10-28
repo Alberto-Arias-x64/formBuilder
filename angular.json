@@ -36,6 +36,7 @@
             "styles": [
               "src/normalize.css",
               "public/fonts/fonts.css",
+              "node_modules/vanillajs-datepicker/sass/datepicker.scss",
               "src/styles.css"
             ],
             "scripts": []
