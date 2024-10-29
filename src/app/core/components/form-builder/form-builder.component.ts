@@ -34,11 +34,15 @@ export class FormBuilderComponent implements OnInit {
     this.form = this._formBuilderService.buildForm(this.formMap().formData)
   }
 
-  convertList(list: string | null): ITypedParam[] {
+  public convertList(list: string | null): ITypedParam[] {
     return this._formBuilderService.convertList(list)
   }
 
-  handleSubmit() {
+  public columnClass(columns = 1) {
+    return `span-${columns}`
+  }
+
+  public handleSubmit() {
     if (this.form.invalid) return this._formBuilderService.validateForm(this.form)
     alert('Formulario valido')
     this.formData.emit(this.form.value)
