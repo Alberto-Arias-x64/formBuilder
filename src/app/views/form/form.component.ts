@@ -34,6 +34,6 @@ export class FormComponent implements OnInit {
   handleSubmit(data: Record<string, string>) {
     this._formService.addData(data)
     this._formService.nextStep()
-    if (this.step$() > this.formMap$().length - 1) this._router.navigate(['/success'])
+    if (this.step$() > this.formMap$().length - 1) this._router.navigate(['success'])
   }
 }
