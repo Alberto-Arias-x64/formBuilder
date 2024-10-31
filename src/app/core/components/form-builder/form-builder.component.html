@@ -2,7 +2,7 @@
   <h1>{{ formMap().title }}</h1>
   <form (ngSubmit)="handleSubmit()" [formGroup]="form" class="card flex-column gap-standard">
     <app-form-layout>
-      @for(item of formMap().formData; track item.id){ @if(item.list && (item.type === LIST_TYPES.LIST || item.type === LIST_TYPES.SEARCH)){
+      @for(item of formMap().formData; track item.id){ @if(item.list && isList(item.type)){
       <app-input-list
         [data]="{
           label: item.label,
@@ -13,7 +13,7 @@
         [formControlName]="item.name"
         [ngClass]="columnClass(item.columns)"
       />
-      } @else if (item.type === LIST_TYPES.TEXT || item.type === LIST_TYPES.NUMBER || item.type === LIST_TYPES.PASSWORD || item.type === LIST_TYPES.MONEY) {
+      } @else if (isText(item.type)) {
       <app-input-text
         [data]="{
           label: item.label,

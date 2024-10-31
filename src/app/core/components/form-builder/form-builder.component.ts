@@ -42,6 +42,14 @@ export class FormBuilderComponent implements OnInit {
     return `span-${columns}`
   }
 
+  public isList(type: EFormType) {
+    return type === this.LIST_TYPES.LIST || type === this.LIST_TYPES.SEARCH
+  }
+
+  public isText(type: EFormType) {
+    return type === this.LIST_TYPES.TEXT || type === this.LIST_TYPES.NUMBER || type === this.LIST_TYPES.PASSWORD || type === this.LIST_TYPES.MONEY
+  }
+
   public handleSubmit() {
     if (this.form.invalid) return this._formBuilderService.validateForm(this.form)
     alert('Formulario valido')
