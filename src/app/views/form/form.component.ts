@@ -3,6 +3,7 @@ import { Component, computed, inject, OnInit, signal } from '@angular/core'
 import { CommonService } from '@services/common.service'
 import { FormService } from './form.service'
 import { Router } from '@angular/router'
+import { MsalService } from '@azure/msal-angular'
 
 @Component({
   selector: 'app-form',
@@ -15,6 +16,7 @@ export class FormComponent implements OnInit {
   private readonly _commonService = inject(CommonService)
   private readonly _formService = inject(FormService)
   private readonly _router = inject(Router)
+  private readonly _authService = inject(MsalService)
 
   step$ = computed(() => this._formService.currentStep$())
   formMap$ = computed(() => this._formService.formMap$())
@@ -23,6 +25,9 @@ export class FormComponent implements OnInit {
   ngOnInit() {
     this._formService.currentStep$.set(0)
     this.loadData()
+    if (!this._authService.instance.getActiveAccount()) {
+      this._router.navigate(['login'])
+    }
   }
 
   async loadData() {
